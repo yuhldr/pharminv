@@ -1,6 +1,6 @@
 import subprocess
 
-from setuptools import setup, Extension
+from setuptools import Extension, setup
 
 try:
     pandoc = subprocess.Popen(['pandoc', 'README.md', '--to', 'rst'],
@@ -48,5 +48,6 @@ setup(
     license='GPLv3',
     url='http://github.com/aaren/pharminv',
     cmdclass=cmdclass,
+    install_requires=['numpy', 'Cython'],
     ext_modules=extensions
 )

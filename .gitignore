@@ -1,2 +1,4 @@
 harminv/*.c
 harminv/*.so
+build
+.pyc

@@ -2,7 +2,7 @@
 import numpy as np
 cimport numpy as np
 
-cimport charminv
+from harminv cimport charminv
 
 cdef class Harminv:
     cdef readonly int n
