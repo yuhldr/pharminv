@@ -8,7 +8,7 @@ import harminv
 
 class ReferenceData(object):
     # output generated from command line use of harminv
-    # cat tests/input.dat | harminv -t 0.01 0.001-1
+    # cat input.dat | harminv -t 0.01 0.001-1
     cli_output = """frequency, decay constant, Q, amplitude, phase, error
     -0.506426, 3.072252e-03, 517.856, 0.507868, -0.200813, 2.128453e-04
     -0.301698, 6.482521e-04, 1462.11, 0.49748, -0.0520909, 7.269295e-05
@@ -45,12 +45,12 @@ def create_signal():
 
 
 def write_signal(signal):
-    with open('tests/input.dat', 'w') as f:
+    with open('input.dat', 'w') as f:
         signal.tofile(f, sep=' ')
 
 
 def read_signal():
-    return np.fromfile('tests/input.dat', sep=' ')
+    return np.fromfile('input.dat', sep=' ')
 
 
 def test_harminv():
@@ -72,3 +72,7 @@ def test_harminv():
                                           harm.amplitude[i],
                                           harm.phase[i],
                                           harm.error[i]))
+
+
+if __name__ == '__main__':
+    test_harminv()
